@@ -101,6 +101,7 @@ class RPS extends React.Component {
             const winner = this.CheckWinner(valor, e.target.id);
             const newState = { play: this.state.plays.length + 1, you: e.target.id, opp: valor, winner: winner };
             const state = [...this.state.plays, newState];
+            console.log(e.target.id);
             this.setState({
                 plays: state
             })
