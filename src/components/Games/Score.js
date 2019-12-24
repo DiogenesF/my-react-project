@@ -1,7 +1,6 @@
 import React from "react";
 
-function DisplayScore({plays, toggle}) {
-    console.log(toggle);
+function DisplayScore({ plays, toggle, resetPlays }) {
     if (toggle === false) {
         return null
     }
@@ -34,6 +33,7 @@ function DisplayScore({plays, toggle}) {
                 <div>
                     <h3>Score</h3>
                     {score}
+                    <button onClick={() => resetPlays()} className="waves-effect waves-light black btn">Reset Score</button>
                 </div>
             );
         }
@@ -47,29 +47,16 @@ function DisplayScore({plays, toggle}) {
     }
 }
 
-class Score extends React.Component {
-    state = {
-        toggle: false
-    }
+function Score(props) {
 
-    handleClick = () => {
-        this.setState({
-            toggle: !this.state.toggle
-        })
-    }
-
-    render () {
-        const {plays} = this.props;
-
-        return (
-            <div>
-                <div className="row center">
-                    <button onClick={this.handleClick} className="waves-effect waves-light black btn"> <i className="fa fa-clipboard"></i>Show/Hide Score</button>
-                </div>
-                <DisplayScore plays={plays} toggle={this.state.toggle}/>
+    return (
+        <div>
+            <div className="row center">
+                <button onClick={() => props.handleToggle()} className="waves-effect waves-light black btn"> <i className="fa fa-clipboard"></i>Show/Hide Score</button>
             </div>
-        );
-    }
+            <DisplayScore plays={props.plays} toggle={props.toggle} resetPlays={props.resetPlays} />
+        </div>
+    );
 }
 
 
