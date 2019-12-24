@@ -28,7 +28,15 @@ function MyContent() {
                         
                     }}><strong>This is a website that I created using React just to practice and
                     test my knowledge using this library. I didn't want to spend too much
-                    time with the design so I decided to keep it as simples as possible xD</strong>
+                    time with the design so I decided to keep it as simple as possible. Btw I used 
+                    <a style={{color: "gray"}}href="https://materializecss.com/"> materialize</a> and a little inline CSS.</strong>
+                    <strong><br/>A few details of the implementation: The state of the Rock-Paper-Scissors game won't
+                    change if you move through the routes, but in the Tic-Tac-Toe game it will.</strong>
+                    <br/><strong>Up until now I used the following features: </strong>
+                    <ol style={{marginLeft: "50px"}}>
+                        <li><strong>React-Router-Dom</strong></li>
+                        <li><strong>React-Hooks</strong></li>
+                    </ol>
                     </h6>
                 </div>
             </div>
