@@ -97,7 +97,6 @@ class RPS extends React.Component {
                     valor = "scissors";
                 }
                 const winner = this.CheckWinner(valor, e.target.id);
-                console.log()
                 const newPlay = { play: this.props.plays.length + 1, you: e.target.id, opp: valor, winner: winner };
                 this.props.addPlay(newPlay);
             }

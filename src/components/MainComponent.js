@@ -10,9 +10,10 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 
 function Main() {
-    const [plays, setPlays] = useState([]);
-    const [toggle, setToggle] = useState(false);
-
+    const [plays, setPlays] = useState([]);     //These are the state of the Rock Paper Scissors game
+    const [toggle, setToggle] = useState(false);//It was declared here to make sure that the state of this game 
+                                                //will only be changed if the page is re-rendered.
+                                                //A different approach was used in the TicTacToe game.
     const addPlay = (play) => {
         const newState = [...plays, play];
         setPlays(newState);
@@ -32,7 +33,7 @@ function Main() {
         <>
             <Header />
             <Switch>
-                <Route path="/home" component={MyContent} />
+                <Route exact path="/" component={MyContent} />
                 <Route exact path="/game" component={Game} />
                 <Route exact path="/notfound" component={NotFound} />
                 <Route exact path="/RPS" component={() => <RPS plays={plays} addPlay={addPlay}

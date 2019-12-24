@@ -1,0 +1,19 @@
+table {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+tbody {
+    text-align: center;
+    border: none;
+}
+
+.TTTbtn {
+    padding: 6px;
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid black;
+    height: 70px;
+    width: 70px;
+    vertical-align: top;
+}
