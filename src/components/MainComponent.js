@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
 import MyContent from "./MyContentComponent";
@@ -9,50 +9,42 @@ import TicTacToe from "./Games/TicTacToeComponent";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 
-class Main extends React.Component {
-    state = {
-        plays: [],
-        toggle: false
+function Main() {
+    const [plays, setPlays] = useState([]);
+    const [toggle, setToggle] = useState(false);
+
+    const addPlay = (play) => {
+        const newState = [...plays, play];
+        setPlays(newState);
     }
 
-    addPlay = (play) => {
-        const state = [...this.state.plays, play];
-        this.setState({
-            plays: state
-        })
+    const handleToggle = () => {
+        const newToggle = !toggle;
+        setToggle(newToggle);
     }
 
-    handleToggle = () => {
-        this.setState({
-            toggle: !this.state.toggle
-        })
+    const resetPlays = () => {
+        const newState = [];
+        setPlays(newState);
     }
 
-    resetPlays = () => {
-        this.setState({
-            plays: []
-        })
-    }
+    return (
+        <>
+            <Header />
+            <Switch>
+                <Route path="/home" component={MyContent} />
+                <Route exact path="/game" component={Game} />
+                <Route exact path="/notfound" component={NotFound} />
+                <Route exact path="/RPS" component={() => <RPS plays={plays} addPlay={addPlay}
+                    toggle={toggle} handleToggle={handleToggle}
+                    resetPlays={resetPlays} />} />
+                <Route exact path="/TicTacToe" component={TicTacToe} />
+                <Redirect to="/notfound" />
 
-    render() {
-        return (
-            <>
-                <Header />
-                <Switch>
-                    <Route path="/home" component={MyContent} />
-                    <Route exact path="/game" component={Game} />
-                    <Route exact path="/notfound" component={NotFound} />
-                    <Route exact path="/RPS" component={() => <RPS plays={this.state.plays} addPlay={this.addPlay}
-                                                toggle={this.state.toggle} handleToggle={this.handleToggle}
-                                                resetPlays={this.resetPlays}/>} />
-                    <Route exact path="/TicTacToe" component={TicTacToe} />
-                    <Redirect to="/notfound" />
-
-                </Switch>
-                <Footer />
-            </>
-        );
-    }
+            </Switch>
+            <Footer />
+        </>
+    );
 }
 
 export default Main;
