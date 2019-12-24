@@ -7,26 +7,19 @@ function DisplayScore({ plays, toggle, resetPlays }) {
     else {
         if (plays.length !== 0) {
             var score = plays.map((each) => {
-                if (each.winner === "you") {
+                if (each.winner === "tie") {
                     return (
-                        <div key={each.play} style={{ color: "green" }}>
-                            <p>Play: {each.play}. Opponent: {each.opp}. You: {each.you}. Winner: {each.winner}</p>
-                        </div>
-                    )
-                }
-                else if (each.winner === "opp") {
-                    return (
-                        <div key={each.play} style={{ color: "red" }}>
+                        <div key={each.play}>
                             <p>Play: {each.play}. Opponent: {each.opp}. You: {each.you}. Winner: {each.winner}</p>
                         </div>
                     )
                 }
                 else {
                     return (
-                        <div key={each.play}>
+                        <div key={each.play} style={{ color: each.winner === "you" ? "green" : "red" }}>
                             <p>Play: {each.play}. Opponent: {each.opp}. You: {each.you}. Winner: {each.winner}</p>
                         </div>
-                    )
+                    );
                 }
             })
             return (
