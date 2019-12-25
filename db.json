@@ -1,0 +1,40 @@
+{
+  "acc": [
+    {
+      "name": "Diogenes Fiorezi",
+      "email": "diog@hotmail.com",
+      "password": "test123",
+      "id": 0
+    },
+    {
+      "name": "Fred",
+      "email": "Flintstone",
+      "password": "1234",
+      "id": 1
+    },
+    {
+      "name": "Diogen",
+      "email": "diio@gmail.com",
+      "password": "1234567",
+      "id": 2
+    },
+    {
+      "name": "Dg",
+      "email": "nailha@asd",
+      "password": "dio",
+      "id": 3
+    },
+    {
+      "name": "asdsa",
+      "email": "asdsada@das",
+      "password": "asd",
+      "id": 4
+    },
+    {
+      "name": "asdsada",
+      "email": "dsadas@dsada",
+      "password": "123",
+      "id": 5
+    }
+  ]
+}

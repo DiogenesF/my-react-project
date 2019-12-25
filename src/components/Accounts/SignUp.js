@@ -20,18 +20,7 @@ class SignUp extends React.Component {
                     password: this.state.password
                 }
             }).then(res => {
-                if (res.ok) {
-                    alert("Your account was succesfully created!!");
-                }
-                else {
-                    var error = new Error("Error" + error.status + ":" + error.statusText);
-                    error.res = res;
-                    throw error;
-                }
-            }, 
-            error => {
-                var errMess = new Error(error.message);
-                throw errMess;
+                alert("Your account was succesfully created");
             }).catch(error => {
                 console.log("Feedback couldn't be posted: " + error.message);
                 alert("Feedback couldn't be posted: " + error.message);
