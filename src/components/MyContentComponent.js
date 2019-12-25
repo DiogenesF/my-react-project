@@ -32,11 +32,13 @@ function MyContent() {
                     <a style={{color: "gray"}}href="https://reactstrap.github.io/"> reactstrap</a> and a little inline CSS.</strong>
                     <strong><br/>A few details of the implementation: The state of the Rock-Paper-Scissors game won't
                     change if you move through the routes, but in the Tic-Tac-Toe game it will.</strong>
+                    <strong>I am using Axios to store the accounts in a local json-server.</strong>
                     <br/><strong>Up until now I used the following features: </strong>
                     <ol style={{marginLeft: "50px"}}>
                         <li><strong>React-Router-Dom</strong></li>
                         <li><strong>React-Hooks</strong></li>
                         <li><strong>Reactstrap</strong></li>
+                        <li><strong>Axios</strong></li>
                     </ol>
                     </h6>
                 </div>
