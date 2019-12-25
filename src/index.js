@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import 'font-awesome/css/font-awesome.min.css';   //This is the font awesome 4, not 5
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-social/bootstrap-social.css';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));

@@ -27,7 +27,7 @@ function DisplayWinner({ winner, isUserX, finished }) {
     if (winner === null) {
         if (finished) {
             return (
-                <div className="center">
+                <div className="text-center" style={{marginTop: "20px"}}>
                     <h4>It was a tie!! Good game!</h4>
                 </div>
             )
@@ -40,14 +40,14 @@ function DisplayWinner({ winner, isUserX, finished }) {
         let user = isUserX ? "X" : "O";
         if (winner === user) {
             return (
-                <div className="center">
+                <div className="text-center" style={{marginTop: "20px"}}>
                     <h4 style={{ color: "green" }}>Congratz!! You won :D</h4>
                 </div>
             )
         }
         else {
             return (
-                <div className="center">
+                <div className="text-center" style={{marginTop: "20px"}}>
                     <h4 style={{ color: "red" }}>Unfortunately you lost :(</h4>
                 </div>
             )
@@ -79,6 +79,11 @@ function TicTacToe() {
     }
 
     const handlePlays = (e) => {
+
+        if (plays[e.target.id] !== null) {
+            alert("You can only select empty spots!!");
+            return null;
+        }
 
         let checkWinner1 = calculateWinner(plays);
         if (checkWinner1 !== null) {
@@ -176,11 +181,13 @@ function TicTacToe() {
 
     return (
         <>
-            <div className="container">
-                <div className="center" style={{marginTop: "50px"}}>
-                    <TTTChoice didUserChoose={didUserChoose} handleUserChoice={handleUserChoice} isUserX={isUserX} />
+            <div style={{marginTop: "100px"}} className="container">
+                <div className="row text-center">
+                    <div className="col-12">
+                        <TTTChoice didUserChoose={didUserChoose} handleUserChoice={handleUserChoice} isUserX={isUserX} />
+                    </div>
                 </div>
-                <table>
+                <table style={{margin: "0px auto"}}>
                     <tbody>
                         <button onClick={handlePlays} id="0" className="white TTTbtn">{plays[0]}</button>
                         <button onClick={handlePlays} id="1" className="white TTTbtn">{plays[1]}</button>
@@ -198,8 +205,8 @@ function TicTacToe() {
                     </tbody>
                 </table>
                 <DisplayWinner winner={winner} isUserX={isUserX} finished={finished} />
-                <div className="center" style={{ marginBottom: "100px" }}>
-                    <button onClick={handleAgain} className="waves-effect waves-light black btn">Start Again</button>
+                <div className="text-center" style={{ marginBottom: "100px", marginTop: "50px" }}>
+                    <button onClick={handleAgain} className="btn btn-dark">Start Again</button>
                 </div>
             </div>
         </>

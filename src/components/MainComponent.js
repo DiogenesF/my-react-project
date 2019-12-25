@@ -6,6 +6,7 @@ import Game from "./GameComponent";
 import NotFound from "./NotFoundComponent";
 import RPS from "./Games/RockPaperScissors";
 import TicTacToe from "./Games/TicTacToeComponent";
+import SignUp from "./Accounts/SignUp";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 
@@ -38,6 +39,7 @@ function Main() {
                 <Route exact path="/RPS" component={() => <RPS plays={plays} addPlay={addPlay}
                     toggle={toggle} handleToggle={handleToggle}
                     resetPlays={resetPlays} />} />
+                <Route exact path="/signup" component={SignUp}/>
                 <Route exact path="/TicTacToe" component={TicTacToe} />
                 <Redirect to="/notfound" />
 

@@ -23,17 +23,17 @@ function DisplayScore({ plays, toggle, resetPlays }) {
                 }
             })
             return (
-                <div>
-                    <h3>Score</h3>
+                <div style={{marginTop: "20px"}}>
+                    <h3>Score: </h3>
                     {score}
-                    <button onClick={() => resetPlays()} className="waves-effect waves-light black btn">Reset Score</button>
+                    <button onClick={() => resetPlays()} className="btn btn-dark">Reset Score</button>
                 </div>
             );
         }
         else {
             return (
-                <div>
-                    <h5>No games have been played yet!</h5>
+                <div style={{marginTop: "30px"}}>
+                    <h5 >No games have been played yet!</h5>
                 </div>
             )
         }
@@ -43,9 +43,11 @@ function DisplayScore({ plays, toggle, resetPlays }) {
 function Score(props) {
 
     return (
-        <div>
-            <div className="row center">
-                <button onClick={() => props.handleToggle()} className="waves-effect waves-light black btn"> <i className="fa fa-clipboard"></i>Show/Hide Score</button>
+        <div style={{marginTop: "50px", marginBottom: "90px"}}>
+            <div>
+                <div>
+                    <button onClick={() => props.handleToggle()} className="btn btn-dark"> <i className="fa fa-clipboard"></i>Show/Hide Score</button>
+                </div>
             </div>
             <DisplayScore plays={props.plays} toggle={props.toggle} resetPlays={props.resetPlays} />
         </div>

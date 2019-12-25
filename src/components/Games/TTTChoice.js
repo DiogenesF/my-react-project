@@ -10,15 +10,15 @@ function TTTChoice({ didUserChoose, handleUserChoice, isUserX }) {
     if (didUserChoose === false) {
         return (
             <>
-                <div className="container">
-                    <div className="row center">
+                <div>
+                    <div>
                         <h4>What do you wanna play with ?</h4>
 
                     </div>
-                    <div className="row center">
-                        <button onClick={handleClick} style={{ margin: "10px" }} value="O" className="waves-effect waves-light blue btn">O</button>
+                    <div style={{marginBottom: "20px"}}>
+                        <button onClick={handleClick} style={{ margin: "10px" }} value="O" className="btn btn-primary">O</button>
                         Or
-                        <button onClick={handleClick} style={{ margin: "10px" }} value="X" className="waves-effect waves-light red btn">X</button>
+                        <button onClick={handleClick} style={{ margin: "10px" }} value="X" className="btn btn-danger">X</button>
                     </div>
 
                 </div>
@@ -28,12 +28,12 @@ function TTTChoice({ didUserChoose, handleUserChoice, isUserX }) {
     }
     else {
         return (
-            <div className="container">
-                <div className="row">
-                    <h6>We will automatically generate your opponent's plays!!</h6>
+            <div>
+                <div>
+                    <h5>We will automatically generate your opponent's plays!!</h5>
                 </div>
-                <div className="row">
-                    <h5 className="center">You are: {isUserX ? "X" : "O"}</h5>
+                <div style={{marginTop: "40px", marginBottom: "20px"}}>
+                    <h4>You are: {isUserX ? "X" : "O"}</h4>
                     <h6>Just click in a square to make your move</h6>
                 </div>
             </div>

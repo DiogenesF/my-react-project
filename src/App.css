@@ -1,18 +1,34 @@
-.space{
-  margin-left: 173px;
+.row-header{
+  margin:0px auto;
+  padding:0px auto;
 }
 
-.nav-wrapper{
+.row-content {
+  margin:0px auto;
+  padding: 50px 0px 50px 0px;
+  border-bottom: 1px ridge;
+  min-height:400px;
+}
+
+.footer{
   background-color: midnightblue;
+  margin:0px auto;
+  padding: 20px 0px 20px 0px;
 }
 
-.page-footer{
-  background-color: midnightblue;
-  margin-top: -5.1px;
+.jumbotron {
+  padding:70px 30px 70px 30px;
+  margin:0px auto;
+  background: #9575CD ;
+  color:floralwhite;
 }
 
-.footer-copyright{
-  text-align: center;
-  margin-top: -20px;
+address{
+  font-size:80%;
+  margin:0px;
+  color:#0f0f0f;
 }
 
+.navbar-dark {
+  background-color:midnightblue;
+}
