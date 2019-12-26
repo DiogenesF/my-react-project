@@ -23,7 +23,6 @@ function calculateWinner(plays) {
 }
 
 function DisplayWinner({ winner, isUserX, finished }) {
-    console.log(winner, isUserX, finished);
     if (winner === null) {
         if (finished) {
             return (

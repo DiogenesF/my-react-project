@@ -105,8 +105,8 @@ class RPS extends React.Component {
         return (
             <>
                 <div style={{ marginTop: "100px" }} className="container">
-                    <div className="row justify-content-center">
-                        <div className="col-6">
+                    <div className="row">
+                        <div className="col-12 text-center">
                             <h4>Make your choice and we will randomly generate a choice for your opponent!!</h4>
                         </div>
                     </div>

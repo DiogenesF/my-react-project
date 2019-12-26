@@ -12,35 +12,35 @@ class SignUp extends React.Component {
 
         if (this.state.password !== this.state.confirm) {
             alert("Your passwords didn't match!");
-        } 
+        }
         else {
             axios.get("http://localhost:3001/acc")
-            .then(res => {
-                const check = res.data.filter(each => {
-                    return each.email === this.state.email;
-                })
-                
-                if (check.length === 0) {
-                    canCreate = true;
-                }
-                if (canCreate) {
-                    axios({
-                        method: 'post',
-                        url: "http://localhost:3001/acc",
-                        data: {
-                            name: this.state.name,
-                            email: this.state.email,
-                            password: this.state.password
-                        }
-                    }).then(res => {
-                        alert("Your account was succesfully created");
-                        this.setState({ name: "", email: "", password: "", confirm: "" });
+                .then(res => {
+                    const check = res.data.filter(each => {
+                        return each.email === this.state.email;
                     })
-                }
-                else {
-                    alert("This email is already registered!!")
-                }
-            })     
+
+                    if (check.length === 0) {
+                        canCreate = true;
+                    }
+                    if (canCreate) {
+                        axios({
+                            method: 'post',
+                            url: "http://localhost:3001/acc",
+                            data: {
+                                name: this.state.name,
+                                email: this.state.email,
+                                password: this.state.password
+                            }
+                        }).then(res => {
+                            alert("Your account was succesfully created");
+                            this.setState({ name: "", email: "", password: "", confirm: "" });
+                        })
+                    }
+                    else {
+                        alert("This email is already registered!!")
+                    }
+                })
         }
     }
 
@@ -57,7 +57,7 @@ class SignUp extends React.Component {
                             <h5>By creating an account here, you will be able to keep your own to-do list and access it
                 anytime, and it's only available to you :D</h5>
                         </div>
-                        <div className="col-md-8 col-sm-12">
+                        <div className="col-md-8 col-10">
                             <form onSubmit={this.handleSubmit}>
                                 <div className="form-group">
                                     <label htmlFor="name">Your name</label>
@@ -75,7 +75,7 @@ class SignUp extends React.Component {
                                     <label htmlFor="confirm">Confirm</label>
                                     <input value={this.state.confirm} onChange={this.handleChange} type="password" className="form-control" id="confirm" placeholder="Confirm password..." />
                                 </div>
-                                <button style={{ marginBottom: "40px" }} type="submit" className="col-5 col-md-3 offset-4 btn btn-primary">Sign Up</button>
+                                <button style={{ marginBottom: "40px" }} type="submit" className="col-5 col-md-3 offset-4 btn btn-primary text-center">Sign Up</button>
                             </form>
                         </div>
                     </div>

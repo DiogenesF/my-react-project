@@ -19,7 +19,8 @@ function Footer() {
                         <div>
                             <a className="btn btn-social-icon btn-facebook" href="https://www.facebook.com/Doesntexis"><i className="fa fa-facebook"></i></a>
                             <a className="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/in/diogenes-fiorezi"><i className="fa fa-linkedin"></i></a>
-                            <a className="btn btn-social-icon btn-twitter" href="https://www.instagram.com/diiogeneesf/"><i className="fa fa-instagram"></i></a>
+                            <a className="btn btn-social-icon btn-instagram" href="https://www.instagram.com/diiogeneesf/"><i className="fa fa-instagram"></i></a>
+                            <a className="btn btn-social-icon btn-github" href="https://github.com/DiogenesF"><i className="fa fa-github"></i></a>
                             <a className="btn btn-social-icon btn-facebook" href="mailto:diogenesfiorezi@hotmail.com"><i className="fa fa-envelope-o"></i></a>
                         </div>
                     </div>
