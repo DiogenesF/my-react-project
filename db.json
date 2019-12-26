@@ -35,6 +35,12 @@
       "email": "dsadas@dsada",
       "password": "123",
       "id": 5
+    },
+    {
+      "name": "Dg",
+      "email": "dioge@hotmail.com",
+      "password": "asd",
+      "id": 6
     }
   ]
 }

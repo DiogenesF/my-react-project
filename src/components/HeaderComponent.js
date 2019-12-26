@@ -1,7 +1,8 @@
 import React from "react";
+import SignIn from "./Accounts/SignIn";
 import {
     Nav, Navbar, NavbarToggler,
-    Collapse, NavItem, Button, Input, FormGroup, Label, Modal, ModalHeader, ModalBody, Form} from 'reactstrap';
+    Collapse, NavItem, Button} from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
 
@@ -11,7 +12,6 @@ class Header extends React.Component {
 
         this.toggleNav = this.toggleNav.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
-        this.handleLogin = this.handleLogin.bind(this);
         this.state = {
             isNavOpen: false,
             isModalOpen: false
@@ -28,12 +28,6 @@ class Header extends React.Component {
         this.setState({
             isModalOpen: !this.state.isModalOpen
         });
-    }
-
-    handleLogin(event) {
-        this.toggleModal();
-        alert("Username: " + this.username.value + " Password: " + this.password.value + " Remember: " + this.remember.checked);
-        event.preventDefault();
     }
 
     render() {
@@ -64,26 +58,7 @@ class Header extends React.Component {
                         </Collapse>
                     </div>
                 </Navbar>
-                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                    <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
-                    <ModalBody>
-                        <Form onSubmit={this.handleLogin}>
-                            <FormGroup>
-                                <Label htmlFor="username">Username</Label>
-                                <Input type="text" id="username" name="username"
-                                 innerRef={(input) => this.username = input}/>
-                            </FormGroup>
-                            <FormGroup>
-                                <Label htmlFor="password">Password</Label>
-                                <Input type="password" id="password" name="password" 
-                                 innerRef={(input) => this.password = input} />
-                            </FormGroup>
-                            <div style={{textAlign: "center"}}>
-                                <Button type="submit" value="submit" color="primary">Login</Button>
-                            </div>
-                        </Form>
-                    </ModalBody>
-                </Modal>
+                <SignIn isModalOpen={this.state.isModalOpen} toggleModal={this.toggleModal}/>
             </>
         );
     }

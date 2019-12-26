@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 const axios = require('axios').default;
 
 class SignUp extends React.Component {
@@ -8,25 +8,39 @@ class SignUp extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        var canCreate = false;
+
         if (this.state.password !== this.state.confirm) {
             alert("Your passwords didn't match!");
-        } else {
-            axios({
-                method: 'post',
-                url: "http://localhost:3001/acc",
-                data: {
-                    name: this.state.name,
-                    email: this.state.email,
-                    password: this.state.password
+        } 
+        else {
+            axios.get("http://localhost:3001/acc")
+            .then(res => {
+                const check = res.data.filter(each => {
+                    return each.email === this.state.email;
+                })
+                
+                if (check.length === 0) {
+                    canCreate = true;
                 }
-            }).then(res => {
-                alert("Your account was succesfully created");
-            }).catch(error => {
-                console.log("Feedback couldn't be posted: " + error.message);
-                alert("Feedback couldn't be posted: " + error.message);
-            });
-
-            this.setState({ name: "", email: "", password: "", confirm: "" });
+                if (canCreate) {
+                    axios({
+                        method: 'post',
+                        url: "http://localhost:3001/acc",
+                        data: {
+                            name: this.state.name,
+                            email: this.state.email,
+                            password: this.state.password
+                        }
+                    }).then(res => {
+                        alert("Your account was succesfully created");
+                        this.setState({ name: "", email: "", password: "", confirm: "" });
+                    })
+                }
+                else {
+                    alert("This email is already registered!!")
+                }
+            })     
         }
     }
 
