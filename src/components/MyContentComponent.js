@@ -1,5 +1,6 @@
 import React from "react";
 import Background from "./styles/computer.jpeg";
+import Mypic from "./styles/my_image.png";
 
 function MyContent() {
   return (
@@ -22,7 +23,7 @@ function MyContent() {
           </div>
           <div className="row">
             <div className="col-sm-12 mt-4 text-center">
-              <img src="assets/images/my_image.png" alt="me" height="300px" />
+              <img src={Mypic} alt="me" height="300px" />
             </div>
           </div>
           <div className="row">
