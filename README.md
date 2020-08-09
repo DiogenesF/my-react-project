@@ -1,6 +1,9 @@
 ### This is a little project that I created right after learning the concepts of React
 I was still testing some features and this project was made just to practice with what I had just learned at the time.
 
+### You check it out here:
+https://diogenesf.github.io/my-react-project/
+
 ### What is really cool about it is the `Games` page, where you can choose between Tic-Tae-Toe or Rock-Paper-Scissors.
 
 # Tic-Tac-Toe:
