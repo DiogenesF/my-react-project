@@ -10,4 +10,9 @@ I was still testing some features and this project was made just to practice wit
    <img src="./images/rockpaperscissors.png" alt="Image Info" height="400"  />
    
 ### To run this application, you can just go to the root folder and run:
+
+### `$ npm install`
+
+and
+
 ### `$ npm start`
